@@ -12,6 +12,6 @@ public class Const {
 
     public static final int SCREEN_WIDTH =CELLS_COUNT_X*CELL_SIZE;
     public static final int SCREEN_HEIGHT = CELLS_COUNT_Y*CELL_SIZE;
-    public static final String SCREEN_NAME = "Tproger's Snake";
+    public static final String SCREEN_NAME = "Змейка" ;
 }
 
