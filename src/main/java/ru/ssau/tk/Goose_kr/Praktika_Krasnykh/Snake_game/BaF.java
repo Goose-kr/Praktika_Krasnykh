@@ -1,8 +1,9 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Snake_game;
 
+
+
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
-
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -20,7 +20,7 @@ public class Cell {
             this.state = state;
         }
 
-        ///==== Ничем не примечательные геттеры и сеттеры
+
 
         public int getX() {
             return x;
@@ -46,7 +46,7 @@ public class Cell {
             this.state = state;
         }
 
-        ///====
+
 
         ///Метод обновления клетки. Уменьшаем время "горения", если это необходимо
         public void update(boolean have_to_decrease) {
@@ -64,12 +64,12 @@ public class Cell {
                 ///Если в ней нет ничего -- никак выглядеть и не должна
                 return null;
             } else {
-                ///Иначе проходимся свитчем по возможным объектам.
-                ///Так как это демо -- я добавил только ягоды
+
                 switch (this.state) {
                     default:
                         return BaF.CHERRIES;
                 }
+
             }
         }
 

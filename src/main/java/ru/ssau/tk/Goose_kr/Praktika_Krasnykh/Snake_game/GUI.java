@@ -18,8 +18,7 @@ public class GUI {
     private static final int SCREEN_HEIGHT = 640 ;
     private static final String SCREEN_NAME = "Змейка" ;
     private static final float INITIAL_SPAWN_CHANCE = 0.05F;
-    ///CELLS_COUNT_X и CELLS_COUNT_Y -- константы
-    //Cell -- класс, который реализует main.GUIElement; им займёмся немного позже
+
     private static Cell[][] cells;
 
 
@@ -39,7 +38,7 @@ public class GUI {
     }
 
 
-    //Этот метод будет вызываться извне
+
     public static void update(boolean have_to_decrease) {
         updateOpenGL();
 
@@ -88,8 +87,7 @@ public class GUI {
         cells[x][y].setState(state);
     }
 
-    ///А этот метод будет использоваться только локально,
-    /// т.к. базовым другие классы должны работать на более высоком уровне
+
     private static void updateOpenGL() {
         Display.update();
         Display.sync(FPS);
