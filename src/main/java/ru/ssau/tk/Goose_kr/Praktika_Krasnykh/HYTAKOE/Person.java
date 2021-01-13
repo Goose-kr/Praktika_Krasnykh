@@ -1,4 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.HYTAKOE;
 
 public class Person {
     private String firstName;
