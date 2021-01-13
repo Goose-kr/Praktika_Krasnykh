@@ -1,4 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh;
 
 
 public class Location {
@@ -6,9 +6,9 @@ public class Location {
     private String name;
     private double latitude;
     private double longitude;
-    public Location(){
 
-    }
+    public enum Level1 {CITY, VILLAGE}
+
 
     public int getId() {
         return id;
@@ -40,10 +40,6 @@ public class Location {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
-    }
-
-    public static class SettlementType{
-        public static final SettlementType VILLAGE = new SettlementType();
     }
 
 }
