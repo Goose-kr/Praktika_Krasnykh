@@ -1,6 +1,7 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5_4;
 
 import org.testng.annotations.Test;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_4.Location;
 
 import static org.testng.Assert.*;
 

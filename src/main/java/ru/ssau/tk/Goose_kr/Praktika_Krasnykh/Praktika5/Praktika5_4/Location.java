@@ -1,4 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5_4;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_4;
 
 import java.util.Objects;
 

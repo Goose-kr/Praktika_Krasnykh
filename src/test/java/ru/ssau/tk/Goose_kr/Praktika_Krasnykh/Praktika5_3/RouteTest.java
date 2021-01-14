@@ -1,11 +1,12 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5_3;
 
 import org.testng.annotations.Test;
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1.Location;
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1.Settlement;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.Location;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.Settlement;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_3.Route;
 
 import static org.testng.Assert.*;
-import static ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1.SettlementType.CITY;
+import static ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.SettlementType.CITY;
 
 public class RouteTest {
     @Test

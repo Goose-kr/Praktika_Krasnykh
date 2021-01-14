@@ -1,6 +1,6 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5_3;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_3;
 
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1.Location;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.Location;
 
 import java.util.ArrayList;
 import java.util.Iterator;

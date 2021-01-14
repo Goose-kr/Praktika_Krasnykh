@@ -1,4 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1;
 
 public class Settlement extends Location {
     private int settlement;
@@ -13,7 +13,7 @@ public class Settlement extends Location {
     }
     public SettlementType getType (){return type;}
     public void setType(SettlementType type){this.type = type;}
-    public void setType (ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Practika5_1.SettlementType city){
+    public void setType (ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.SettlementType city){
 
     }
 

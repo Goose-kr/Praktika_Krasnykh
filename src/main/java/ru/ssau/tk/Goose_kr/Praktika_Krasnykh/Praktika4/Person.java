@@ -6,7 +6,10 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private int passportId;
-
+    Gender gender;
+    public enum Gender{
+        MAN, WOMEN
+    }
     public Person() {
 
     }
@@ -24,6 +27,21 @@ public class Person implements Serializable {
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportId = passportId;
+    }
+
+    public Person(String firstName, String lastName, int passportId, Gender gender) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = passportId;
+        this.gender = gender;
+    }
+
+    void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    Gender getGender() {
+        return gender;
     }
 
     public String getFirstName() {
@@ -57,19 +75,21 @@ public class Person implements Serializable {
 
     static class People1 {
         public static void main(String[] args) {
-            Person man = new Person();
-            Person women = new Person();
+            Person person1 = new Person();
+            Person person2 = new Person();
 
-            man.setFirstName("Anatoly");
-            man.setLastName("Krasnykh");
-            man.setPassportId(4654834);
+            person1.setFirstName("Anatoly");
+            person1.setLastName("Krasnykh");
+            person1.setPassportId(4654834);
+            person1.setGender(Gender.MAN);
 
-            women.setFirstName("Angelina");
-            women.setLastName("Izmailova");
-            women.setPassportId(6452315);
+            person2.setFirstName("Angelina");
+            person2.setLastName("Izmailova");
+            person2.setPassportId(6452315);
+            person2.setGender(Gender.WOMEN);
 
-            System.out.println(man.getFirstName() + " " + man.getLastName() + "PassportId" + man.getPassportId());
-            System.out.println(women.getFirstName() + " " + women.getLastName() + "PassportId" + women.getPassportId());
+            System.out.println(person1.getFirstName() + " " + person1.getLastName() + " " + "PassportId:" + person1.getPassportId() + " " + "Gender:" + person1.getGender());
+            System.out.println(person2.getFirstName() + " " + person2.getLastName() + " " + "PassportId:" + person2.getPassportId() + " " + "Gender:" + person2.getGender());
             Person firstWomen = new Person();
             Person secondWomen = new Person("Josev", "Laur", 89792);
             Person firstMan = new Person("Max", "Ladygin");
