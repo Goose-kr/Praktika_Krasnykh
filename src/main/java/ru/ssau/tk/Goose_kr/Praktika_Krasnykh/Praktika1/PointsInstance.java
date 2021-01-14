@@ -14,6 +14,12 @@ public class PointsInstance {
 
 
         System.out.println("Multiplication firstPoint by number 5 = (" + Points.enlarge(firstPoint, 5).x + ", " + Points.enlarge(firstPoint, 5).y + ", " + Points.enlarge(firstPoint, 5).z + ")");
+
+        System.out.println("Length of radius vector = " + Points.length(firstPoint));
+
+        System.out.println("Opposite of #1 point = (" + Points.opposite(firstPoint).x + ", " + Points.opposite(firstPoint).y + ", " + Points.opposite(firstPoint).z + ")");
+        System.out.println("Inverse of #1 point = (" + Points.inverse(firstPoint).x + ", " + Points.inverse(firstPoint).y + ", " + Points.inverse(firstPoint).z + ")");
+
     }
 }
 

@@ -23,4 +23,17 @@ public class Points {
     public static Point enlarge(Point obj, double number) {
         return new Point(obj.x * number, obj.y * number, obj.z * number);
     }
+
+    public static double length(Point obj) {
+        return obj.length();
+    }
+
+    public static Point opposite(Point obj) {
+        return new Point(-obj.x, -obj.y, -obj.z);
+    }
+
+    public static Point inverse(Point obj) {
+        return new Point(1 / obj.x, 1 / obj.y, 1 / obj.z);
+    }
+
 }

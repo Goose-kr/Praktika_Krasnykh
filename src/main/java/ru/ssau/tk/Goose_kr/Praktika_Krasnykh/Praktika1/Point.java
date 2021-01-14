@@ -11,4 +11,9 @@ public class Point {
         this.z = z;
     }
 
+    public double length() {
+        return Math.sqrt(x * x + y * y + z * z);
+    }
+
+
 }
