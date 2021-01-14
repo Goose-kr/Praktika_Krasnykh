@@ -7,6 +7,8 @@ public class PointsInstance {
         System.out.println("First point = (" + firstPoint.x + ", " + firstPoint.y + ", " + firstPoint.z + ")");
         System.out.println("Second point = (" + secondPoint.x + ", " + secondPoint.y + ", " + secondPoint.z + ")");
 
+        System.out.println("Length of radius vector = " + Points.length(firstPoint));
+
         System.out.println("Sum = (" + Points.sum(firstPoint, secondPoint).x + ", " + Points.sum(firstPoint, secondPoint).y + ", " + Points.sum(firstPoint, secondPoint).z + ")");
         System.out.println("Subtract = (" + Points.subtract(firstPoint, secondPoint).x + ", " + Points.subtract(firstPoint, secondPoint).y + ", " + Points.subtract(firstPoint, secondPoint).z + ")");
         System.out.println("Multiply = (" + Points.multiply(firstPoint, secondPoint).x + ", " + Points.multiply(firstPoint, secondPoint).y + ", " + Points.multiply(firstPoint, secondPoint).z + ")");
@@ -15,10 +17,11 @@ public class PointsInstance {
 
         System.out.println("Multiplication firstPoint by number 5 = (" + Points.enlarge(firstPoint, 5).x + ", " + Points.enlarge(firstPoint, 5).y + ", " + Points.enlarge(firstPoint, 5).z + ")");
 
-        System.out.println("Length of radius vector = " + Points.length(firstPoint));
+        System.out.println("Vector product = (" + Points.vectorProduct(firstPoint, secondPoint).x + ", " + Points.vectorProduct(firstPoint, secondPoint).y + ", " + Points.vectorProduct(firstPoint, secondPoint).z + ")");
+        System.out.println("Scalar product = " + Points.scalarProduct(firstPoint, secondPoint));
 
-        System.out.println("Opposite of #1 point = (" + Points.opposite(firstPoint).x + ", " + Points.opposite(firstPoint).y + ", " + Points.opposite(firstPoint).z + ")");
-        System.out.println("Inverse of #1 point = (" + Points.inverse(firstPoint).x + ", " + Points.inverse(firstPoint).y + ", " + Points.inverse(firstPoint).z + ")");
+        System.out.println("Opposite of point = (" + Points.opposite(firstPoint).x + ", " + Points.opposite(firstPoint).y + ", " + Points.opposite(firstPoint).z + ")");
+        System.out.println("Inverse of point = (" + Points.inverse(firstPoint).x + ", " + Points.inverse(firstPoint).y + ", " + Points.inverse(firstPoint).z + ")");
 
     }
 }

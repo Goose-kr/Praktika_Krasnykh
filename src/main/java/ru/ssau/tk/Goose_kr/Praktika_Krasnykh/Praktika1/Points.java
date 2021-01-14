@@ -4,6 +4,10 @@ public class Points {
     private Points() {
     }
 
+    public static double length(Point obj) {
+        return obj.length();
+    }
+
     public static Point sum(Point firstObj, Point secondObj) {
         return new Point(firstObj.x + secondObj.x, firstObj.y + secondObj.y, firstObj.z + secondObj.z);
     }
@@ -24,8 +28,12 @@ public class Points {
         return new Point(obj.x * number, obj.y * number, obj.z * number);
     }
 
-    public static double length(Point obj) {
-        return obj.length();
+    public static double scalarProduct(Point firstObj, Point secondObj) {
+        return firstObj.x * secondObj.x + firstObj.y * secondObj.y + firstObj.z * secondObj.z;
+    }
+
+    public static Point vectorProduct(Point firstObj, Point secondObj) {
+        return new Point(firstObj.y * secondObj.z - firstObj.z * secondObj.y, firstObj.z * secondObj.x - firstObj.x * secondObj.z, firstObj.x * secondObj.y - firstObj.y * secondObj.x);
     }
 
     public static Point opposite(Point obj) {
