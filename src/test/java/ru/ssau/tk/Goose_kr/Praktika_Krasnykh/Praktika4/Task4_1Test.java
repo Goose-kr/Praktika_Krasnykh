@@ -2,6 +2,7 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika4;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika1.Person;
 
 import static org.testng.Assert.*;
 
