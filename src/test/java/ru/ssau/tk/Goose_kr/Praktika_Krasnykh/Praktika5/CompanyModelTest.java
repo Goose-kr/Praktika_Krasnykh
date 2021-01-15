@@ -211,4 +211,35 @@ public class CompanyModelTest {
         assertEquals(locations, new ArrayList<>(Arrays.asList(village1, village1Warehouse, village2Waypoint, village2,
                 city1, city1Depot, loneDepot, city2, city2Warehouse)));
     }
+
+    @Test
+    public void testSort() {
+        fillModels();
+        List<Settlement> settlements = new ArrayList<>(Arrays.asList(city1, village2, city2, village1));
+        CompanyModel.sort(settlements, (o1, o2) -> Integer.compare(o1.getId(), o2.getId()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
+        CompanyModel.sort(settlements, (o1, o2) -> Integer.compare(o1.getSettlement(), o2.getSettlement()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village2, village1, city2, city1)));
+        CompanyModel.sort(settlements, (o1, o2) -> Double.compare(o1.getLatitude(), o2.getLatitude()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
+        CompanyModel.sort(settlements, (o1, o2) -> Double.compare(o1.getLongitude(), o2.getLongitude()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city2, city1)));
+        CompanyModel.sort(settlements, (o1, o2) -> CharSequence.compare(o1.getName(), o2.getName()));
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village2, city1, village1, city2)));
+        CompanyModel.sort(settlements, new EquatorComparator());
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village1, village2, city1, city2)));
+    }
+
+    @Test
+    public void testSortByName() {
+        fillModels();
+        List<Location> locations = new ArrayList<>(Arrays.asList(loneDepot, village2, village1, city1Depot,
+                city2Warehouse, city2, city1, village1Warehouse, village2Waypoint));
+        CompanyModel.sortByName(locations);
+        assertEquals(locations, new ArrayList<>(Arrays.asList(village2, city1, city1Depot, village1,
+                village1Warehouse, city2, city2Warehouse, village2Waypoint, loneDepot)));
+        List<Settlement> settlements = new ArrayList<>(Arrays.asList(city1, village2, city2, village1));
+        CompanyModel.sortByName(settlements);
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(village2, city1, village1, city2)));
+    }
 }
