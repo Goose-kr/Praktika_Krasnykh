@@ -29,4 +29,13 @@ public class NamedPoint extends Point implements Resettable  {
     public void reset() {
         this.name = "Angazil";
     }
+
+    @Override
+    public String toString() {
+        if (this.name == null) {
+            return super.toString();
+        } else {
+            return "" + this.name + " " + super.toString();
+        }
+    }
 }
