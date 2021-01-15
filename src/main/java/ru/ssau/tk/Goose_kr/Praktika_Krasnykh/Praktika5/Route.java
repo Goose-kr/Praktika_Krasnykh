@@ -2,7 +2,7 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 import java.util.*;
 
-public final class Route implements Iterable<Location> {
+public final class Route implements Iterable<Location>, Comparable<Route> {
     private final List<Location> locations = new ArrayList<>();
 
     public List<Location> getLocation() {
@@ -120,5 +120,10 @@ public final class Route implements Iterable<Location> {
             length += Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
         }
         return length;
+    }
+
+    @Override
+    public int compareTo(Route anotherRoute) {
+        return Double.compare(this.length(), anotherRoute.length());
     }
 }
