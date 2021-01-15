@@ -2,16 +2,18 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika1;
 
 import java.io.Serializable;
 
+
 public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private int passportId;
     Gender gender;
-    public enum Gender{
-        MAN, WOMEN
-    }
     public Person() {
 
+    }
+
+    public Person (Gender gender){
+        this.gender = gender;
     }
 
     public Person(int passportId) {
@@ -81,12 +83,12 @@ public class Person implements Serializable {
             person1.setFirstName("Anatoly");
             person1.setLastName("Krasnykh");
             person1.setPassportId(4654834);
-            person1.setGender(Gender.MAN);
+            person1.setGender(Gender.MALE);
 
             person2.setFirstName("Angelina");
             person2.setLastName("Izmailova");
             person2.setPassportId(6452315);
-            person2.setGender(Gender.WOMEN);
+            person2.setGender(Gender.FEMALE);
 
             System.out.println(person1.getFirstName() + " " + person1.getLastName() + " " + "PassportId:" + person1.getPassportId() + " " + "Gender:" + person1.getGender());
             System.out.println(person2.getFirstName() + " " + person2.getLastName() + " " + "PassportId:" + person2.getPassportId() + " " + "Gender:" + person2.getGender());
