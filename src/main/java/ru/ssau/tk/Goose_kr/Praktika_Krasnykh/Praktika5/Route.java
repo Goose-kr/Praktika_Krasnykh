@@ -2,31 +2,31 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 import java.util.*;
 
-public final class Route implements Iterable<Location>{
-    private final List<Location> locations=new ArrayList<>();
+public final class Route implements Iterable<Location> {
+    private final List<Location> locations = new ArrayList<>();
 
     public List<Location> getLocation() {
         return locations;
     }
 
-    public void addLocation(Location location){
+    public void addLocation(Location location) {
         this.locations.add(location);
     }
 
-    public void addIndexLocation(int index,Location location){
-        this.locations.add(index,location);
+    public void addIndexLocation(int index, Location location) {
+        this.locations.add(index, location);
     }
 
-    public void deleteLocation(int index){
+    public void deleteLocation(int index) {
         this.locations.remove(index);
     }
 
-    public Location getFirstLocation(){
+    public Location getFirstLocation() {
         return locations.get(0);
     }
 
-    public Location getLastLocation(){
-        return locations.get(locations.size()-1);
+    public Location getLastLocation() {
+        return locations.get(locations.size() - 1);
     }
 
     @Override
@@ -42,7 +42,7 @@ public final class Route implements Iterable<Location>{
 
             @Override
             public Location next() {
-                if (!(hasNext())){
+                if (!(hasNext())) {
                     throw new NoSuchElementException();
                 } else {
                     location = locations.get(count++);
@@ -76,7 +76,9 @@ public final class Route implements Iterable<Location>{
         Route route = (Route) object;
         List<Location> locationsInList = route.getLocation();
 
-        if (locationsInList.size() != this.locations.size()) { return false; }
+        if (locationsInList.size() != this.locations.size()) {
+            return false;
+        }
 
         for (int i = 0; i < locations.size(); i++) {
             if (!(locationsInList.get(i).equals(locations.get(i)))) {
@@ -106,5 +108,17 @@ public final class Route implements Iterable<Location>{
             stringBuilder.append("\n");
         }
         return stringBuilder.toString();
+    }
+
+    public double length() {
+        double length = 0;
+        for (int i = 1; i < locations.size(); i++) {
+            double x1 = locations.get(i - 1).getLatitude();
+            double y1 = locations.get(i - 1).getLongitude();
+            double x2 = locations.get(i).getLatitude();
+            double y2 = locations.get(i).getLongitude();
+            length += Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+        return length;
     }
 }
