@@ -1,7 +1,6 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.main;
 
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.main.Cell;
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.main.ClickResult;
+
 import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.mouse.Click;
 
 import java.util.Random;

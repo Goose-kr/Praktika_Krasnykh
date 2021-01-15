@@ -1,8 +1,10 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.mouse.lwjglmodule;
 
+
 import org.lwjgl.input.Mouse;
 import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.mouse.Click;
 import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.mouse.MouseHandleModule;
+
 import static ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Sapper.main.Const.CELL_SIZE;
 
 import java.util.LinkedList;
@@ -32,6 +34,7 @@ public class LwjglMouseHandleModule implements MouseHandleModule {
         stack = new LinkedList<>();
     }
 
+    @Override
     public LinkedList<Click> getClicksStack() {
         return stack;
     }
