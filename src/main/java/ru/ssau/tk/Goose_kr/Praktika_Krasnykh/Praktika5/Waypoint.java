@@ -1,12 +1,13 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 public class Waypoint extends Location {
     private WaypointType type;
     private Settlement settlement;
 
-    public Waypoint(){
+    public Waypoint() {
 
     }
+
     public void setType(WaypointType type) {
         this.type = type;
     }

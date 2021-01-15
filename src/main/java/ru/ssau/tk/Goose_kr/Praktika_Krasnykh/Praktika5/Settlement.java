@@ -1,6 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_2;
-
-import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Practika5_1.Location;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 public class Settlement extends Location {
     private int settlement;

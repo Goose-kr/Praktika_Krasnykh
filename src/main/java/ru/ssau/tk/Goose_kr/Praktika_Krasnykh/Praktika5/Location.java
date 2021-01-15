@@ -1,4 +1,4 @@
-package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5.Praktika5_4;
+package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 import java.util.Objects;
 
@@ -8,48 +8,42 @@ public class Location {
     private double latitude;
     private double longitude;
 
-    public enum SettlementType {
-        CITY,
-        VILLAGE
-    }
+    public Location(){
 
-    public enum WaypointType {
-        DEPOT,
-        WAREHOUSE,
-        EMPTY
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
     }
 
     public int getId() {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getLatitude() {
+        return latitude;
     }
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
+    public double getLongitude() {
+        return longitude;
+    }
+
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -68,3 +62,4 @@ public class Location {
         return Objects.hash(id);
     }
 }
+
