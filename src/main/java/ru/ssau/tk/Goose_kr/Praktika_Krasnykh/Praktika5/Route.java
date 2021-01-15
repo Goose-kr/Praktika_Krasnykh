@@ -1,12 +1,9 @@
 package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
-public class Route implements Iterable<Location>{
-    private List<Location> locations=new ArrayList<>();
+public final class Route implements Iterable<Location>{
+    private final List<Location> locations=new ArrayList<>();
 
     public List<Location> getLocation() {
         return locations;
@@ -66,5 +63,31 @@ public class Route implements Iterable<Location>{
 
             index++;
         }
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        } else if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+
+        Route route = (Route) object;
+        List<Location> locationsInList = route.getLocation();
+
+        if (locationsInList.size() != this.locations.size()) { return false; }
+
+        for (int i = 0; i < locations.size(); i++) {
+            if (!(locationsInList.get(i).equals(locations.get(i)))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(locations);
     }
 }
