@@ -3,14 +3,51 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 import org.testng.annotations.Test;
 import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika1.Gender;
 
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedHashSet;
+import java.util.*;
 
 import static org.testng.Assert.*;
 
 public class CompanyModelTest {
+    CompanyModel companyModelOne = new CompanyModel();
+
+    Settlement village1 = new Settlement();
+    Settlement city1 = new Settlement();
+    Waypoint village1Warehouse = new Waypoint();
+    Waypoint village1Waypoint = new Waypoint();
+    Waypoint city1Depot = new Waypoint();
+    Waypoint city1Warehouse = new Waypoint();
+    Waypoint loneDepot = new Waypoint();
+    Driver driver1 = new Driver();
+    Driver driver2 = new Driver();
+    Driver driver3 = new Driver();
+    Route route1 = new Route();
+    Route route2 = new Route();
+    Route route3 = new Route();
+
+    private void fillModels(){
+        village1 = companyModelOne.addSettlement("Sukhodol", 20.36, 45.12, SettlementType.VILLAGE, 1200);
+
+        city1 = companyModelOne.addSettlement("Samara", 20.47, 46.01, SettlementType.CITY, 1250000);
+        village1Warehouse = companyModelOne.addWaypoint("Sukhodol.Warehouse", 20.36, 45.12, WaypointType.WAREHOUSE, village1);
+        village1Waypoint = companyModelOne.addWaypoint("Sukhodol.Waypoint", 20.36, 45.12, WaypointType.EMPTY, village1 );
+        city1Depot = companyModelOne.addWaypoint("Samara.Depot", 20.47, 46.01, WaypointType.DEPOT, city1);
+        loneDepot = companyModelOne.addWaypoint("lone Depot", 20.54, 45.85, WaypointType.DEPOT, null);
+        city1Warehouse = companyModelOne.addWaypoint("Samara.Warehouse", 21.87, 45.84, WaypointType.WAREHOUSE, city1);
+        driver1 = companyModelOne.addDriver("Anatoly", Gender.MALE, new Date(121, Calendar.APRIL, 21));
+        driver2 = companyModelOne.addDriver("Alice", Gender.FEMALE, new Date(127, Calendar.DECEMBER, 5));
+        driver3 = companyModelOne.addDriver("Angelina", Gender.FEMALE, new Date(135, Calendar.AUGUST, 16));
+        route1 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(city1Depot, city1, village1Waypoint, village1Warehouse, city1Warehouse, loneDepot)));
+        route2 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(city1Depot, city1, city1Warehouse, loneDepot)));
+        route3 = companyModelOne.addRoute(new ArrayList<>(Arrays.asList(loneDepot, village1Waypoint, village1Warehouse, city1, city1Depot)));
+        companyModelOne.assignRoute(driver1, route1);
+        companyModelOne.assignRoute(driver2, route2);
+        companyModelOne.assignRoute(driver3, route3);
+
+
+    }
+
+
+
 
 
         @Test
@@ -119,4 +156,16 @@ public class CompanyModelTest {
 
             assertEquals(allDrivers.size(), 2);
         }
+
+    @Test
+    public void testAssignRoute() {
+        fillModels();
+        Map<Driver, Route> mapOne = companyModelOne.getDriverRouteMap();
+
+        assertEquals(mapOne.size(), 3);
+
+        assertEquals(mapOne.get(driver1), route1);
+        assertEquals(mapOne.get(driver2), route2);
+        assertEquals(mapOne.get(driver3), route3);
+    }
 }

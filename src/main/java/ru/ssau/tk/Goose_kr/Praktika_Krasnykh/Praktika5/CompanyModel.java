@@ -2,21 +2,20 @@ package ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika5;
 
 import ru.ssau.tk.Goose_kr.Praktika_Krasnykh.Praktika1.Gender;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class CompanyModel {
     private final Collection<Location> allLocations;
     private final Collection<Route> allRoutes;
     private final Collection<Driver> allDrivers;
     private int maxId = 0;
+    private final Map<Driver, Route> driverRouteMap;
 
     public CompanyModel() {
         allLocations = new LinkedHashSet<>();
         allRoutes = new LinkedHashSet<>();
         allDrivers = new LinkedHashSet<>();
+        driverRouteMap = new LinkedHashMap<>();
     }
 
     public Collection<Location> getAllLocations() {
@@ -84,5 +83,12 @@ public class CompanyModel {
         allRoutes.add(route);
 
         return route;
+    }
+    public Map<Driver, Route> getDriverRouteMap() {
+        return driverRouteMap;
+    }
+
+    public void assignRoute(Driver driver, Route route) {
+        driverRouteMap.put(driver, route);
     }
 }
